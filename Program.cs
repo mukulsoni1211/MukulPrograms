@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 class Mukul
 {
     static void Main(string[] args)
@@ -7,33 +8,53 @@ class Mukul
         Console.Write("Entre your age:- ");
         var inputAge = Console.ReadLine();
         var age = 0;
-        try
-        {
-            age = Convert.ToInt32(inputAge);
-            Console.WriteLine($"Received age is {age}");
+        //If else and TRY CATCH And GET INPUT
+         #region
+            try
+            {
+                age = Convert.ToInt32(inputAge);
+                Console.WriteLine($"Received age is {age}");
 
-            if (age < 20)
-            {
-                Console.WriteLine("You are too young to vote.");
+                if (age < 20)
+                {
+                    Console.WriteLine("You are too young to vote.");
+                }
+                else if (age >= 20 && age < 30)
+                {
+                    Console.WriteLine("You are eligible to vote.");
+                }
+                else
+                {
+                    Console.WriteLine("You are too old to vote.");
+                };
+                
             }
-            else if (age >= 20 && age < 30)
+            catch (Exception e)
             {
-                Console.WriteLine("You are eligible to vote.");
+                Console.WriteLine("TRY AGAIN, Please provide only numbers");
             }
-            else
+            finally
             {
-                Console.WriteLine("You are too old to vote.");
-            };
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("TRY AGAIN, Please provide only numbers");
-        }
-        finally
-        {
-            Console.WriteLine("Successed");
-        }
+                Console.WriteLine("Successed");
+            }
+            
 
+            //switch cases
+            var name = "Mukul";
+            switch (name)
+            {
+            case "Mukul":
+                 Console.WriteLine("Hello Mukul");
+                break;
+            case "Soni":
+                Console.WriteLine("Hello Soni");
+                break;
+            }
+        #endregion
+
+        // const and enums
+        # region
+        #endregion
         Console.WriteLine($"Received age is {age}");
     }
 }
