@@ -1,5 +1,18 @@
 ﻿using System;
 using System.Diagnostics;
+
+
+namespace MyUtilities // custom namespace
+{
+    public class Greetings
+    {
+        public void SayHello(string name)
+        {
+            Console.WriteLine($"Hello {name} from MyUtilities namespace!");
+        }
+    }
+}
+
 class Mukul
 {
     static void Main(string[] args)
@@ -55,6 +68,8 @@ class Mukul
         // const and enums
         # region
         #endregion
+        var a = new MyUtilities.Greetings();
+        a.SayHello("TESTERs");
         Console.WriteLine($"Received age is {age}");
     }
 }
