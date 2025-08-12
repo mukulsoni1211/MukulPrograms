@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
+using cust = CustomClass;
+
 
 
 namespace MyUtilities // custom namespace
 {
     public class Greetings
     {
-        public void SayHello(string name)
+        public void SayHello(string name = "unknkown")
         {
             Console.WriteLine($"Hello {name} from MyUtilities namespace!");
         }
@@ -42,7 +44,7 @@ class Mukul
                 };
                 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("TRY AGAIN, Please provide only numbers");
             }
@@ -69,7 +71,9 @@ class Mukul
         # region
         #endregion
         var a = new MyUtilities.Greetings();
-        a.SayHello("TESTERs");
+        a.SayHello();
+        new cust.SayWord().SayHello();
+        new ConsoleApp1.MyUtil().SayHi();
         Console.WriteLine($"Received age is {age}");
     }
 }
